@@ -51,6 +51,8 @@ public class AloMundoController : ControllerBase
     public string Post(Pessoa umaPessoa)
     {
         _logger.LogInformation("POST /alomundo/pessoa");
+        _logger.LogInformation($"umaPessoa.nome = {umaPessoa.Nome}");
+        _logger.LogInformation($"umaPessoa.idade = {umaPessoa.Idade}");
         return $"Alô, {umaPessoa.Nome}!";
     }
 }
