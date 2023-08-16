@@ -20,4 +20,15 @@ public class CepModel
             Logradouro = model.Logradouro
         };
     }
+
+    public static CepModel ParaModel(CepDTO dto)
+    {
+        return new CepModel {
+            Cep = dto.Cep,
+            Estado = dto.Estado,
+            Cidade = dto.Cidade,
+            Bairro = dto.Bairro,
+            Logradouro = dto.Logradouro
+        };
+    }
 }
