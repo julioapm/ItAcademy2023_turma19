@@ -28,12 +28,15 @@ public class CepRepositoryMemory : ICepRepository
 
     public CepModel Cadastrar(CepModel cepModel)
     {
-        throw new NotImplementedException();
+        dados.TryAdd(cepModel.Cep, cepModel);
+        return cepModel;
     }
 
     public CepModel? ConsultarPorCodigoCep(string codigoCep)
     {
-        throw new NotImplementedException();
+        CepModel? model;
+        dados.TryGetValue(codigoCep, out model);
+        return model;
     }
 
     public IEnumerable<CepModel> ConsultarTodos()
