@@ -1,0 +1,43 @@
+@model CepViewModel
+
+<h2>Cadastro:</h2>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div class="form-group">
+                <label class="control-label" asp-for="Cep"></label>
+                <input class="form-control" asp-for="Cep"/>
+                <span class="text-danger" asp-validation-for="Cep"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label" asp-for="Logradouro"></label>
+                <input class="form-control" asp-for="Logradouro"/>
+                <span class="text-danger" asp-validation-for="Logradouro"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label" asp-for="Bairro"></label>
+                <input class="form-control" asp-for="Bairro"/>
+                <span class="text-danger" asp-validation-for="Bairro"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label" asp-for="Cidade"></label>
+                <input class="form-control" asp-for="Cidade"/>
+                <span class="text-danger" asp-validation-for="Cidade"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label" asp-for="Estado"></label>
+                <input class="form-control" asp-for="Estado"/>
+                <span class="text-danger" asp-validation-for="Estado"></span>
+            </div>
+            <div class="form-group">
+                <input class="btn btn-primary" type="submit" value="OK"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

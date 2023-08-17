@@ -33,4 +33,23 @@ public class CepController : Controller
         }
         return View(cep is not null ? CepModel.ParaViewModel(cep) : cep);
     }
+
+    //GET .../Cep/Create
+    public IActionResult Create()
+    {
+        return View();
+    }
+
+    //POST .../Cep/Create
+    [HttpPost]
+    public IActionResult Create(CepViewModel viewModel)
+    {
+        if (!ModelState.IsValid)
+        {
+            return View(viewModel);
+        }
+        var model = CepModel.ParaModel(viewModel);
+        _cepRepository.Cadastrar(model);
+        return RedirectToAction(nameof(Index));
+    }
 }
