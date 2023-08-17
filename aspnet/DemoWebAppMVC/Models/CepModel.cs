@@ -7,4 +7,15 @@ public class CepModel
     public string Cidade {get;set;} = null!;
     public string Bairro {get;set;} = null!;
     public string Logradouro {get;set;} = null!;
+
+    public static CepViewModel ParaViewModel(CepModel model)
+    {
+        return new CepViewModel {
+            Cep = model.Cep,
+            Estado = model.Estado,
+            Cidade = model.Cidade,
+            Bairro = model.Bairro,
+            Logradouro = model.Logradouro
+        };
+    }
 }

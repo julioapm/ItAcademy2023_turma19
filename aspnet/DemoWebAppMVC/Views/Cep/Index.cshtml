@@ -1,0 +1,32 @@
+@model IEnumerable<CepViewModel>
+
+@{
+    ViewData["Title"] = "CEPs";
+}
+
+<div class="text-center">
+    <h2 class="display-4">Listagem:</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Cep</th>
+                <th>Estado</th>
+                <th>Cidade</th>
+                <th>Bairro</th>
+                <th>Logradouro</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var cep in Model)
+            {
+                <tr>
+                    <td>@cep.Cep</td>
+                    <td>@cep.Estado</td>
+                    <td>@cep.Cidade</td>
+                    <td>@cep.Bairro</td>
+                    <td>@cep.Logradouro</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
