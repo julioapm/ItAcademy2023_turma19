@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using DemoWebAppMVC.Services;
 using DemoWebAppMVC.Models;
+using System.Text;
 
 namespace DemoWebAppMVC.Controllers;
 
@@ -19,5 +20,17 @@ public class CepController : Controller
         var ceps = _cepRepository.ConsultarTodos();
         var cepsviewmodel = ceps.Select(c => CepModel.ParaViewModel(c));
         return View(cepsviewmodel);
+    }
+
+    //GET .../Cep/Search?id=
+    public IActionResult Search(string id)
+    {
+        ViewData["id"] = id;
+        CepModel? cep = null;
+        if (!String.IsNullOrWhiteSpace(id))
+        {
+            cep = _cepRepository.ConsultarPorCodigoCep(id);
+        }
+        return View(cep is not null ? CepModel.ParaViewModel(cep) : cep);
     }
 }

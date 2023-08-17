@@ -1,0 +1,19 @@
+@model CepViewModel
+
+<div class="text-center">
+    <h2 class="display-4">Consulta:</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <form method="get" asp-action="Search">
+                <div class="form-group">
+                    <label for="id">CEP:</label>
+                    <input type="search" id="id" name="id" value="@ViewData["id"]"/>
+                    <input type="submit" value="OK"/>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <span>@Model?.Logradouro</span>
+    </div>
+</div>
