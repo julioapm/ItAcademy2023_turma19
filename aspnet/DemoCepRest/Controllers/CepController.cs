@@ -4,9 +4,11 @@ using Microsoft.AspNetCore.Mvc;
 using DemoCepRest.Services;
 using DemoCepRest.Models;
 using DemoCepRest.DTOs;
+using Microsoft.AspNetCore.Cors;
 
 [ApiController]
 [Route("api/v1/cep")]
+[EnableCors("PermiteTudo")]
 public class CepController : ControllerBase
 {
     private readonly ILogger<CepController> _logger;
