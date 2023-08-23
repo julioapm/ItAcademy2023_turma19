@@ -19,8 +19,13 @@ public class TarefaContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
-        modelBuilder.Entity<Tarefa>()
-                    .Property(t => t.Nome)
-                    .HasMaxLength(30);
+        modelBuilder.Entity<Tarefa>(entityBuilder => {
+            entityBuilder.HasKey(t => t.Id)
+                         .HasName("PK_Tarefas_Id");
+            entityBuilder.Property(t => t.Nome)
+                         .HasMaxLength(30);
+            entityBuilder.Property(t => t.Descricao)
+                         .HasMaxLength(150);
+        });
     }
 }
