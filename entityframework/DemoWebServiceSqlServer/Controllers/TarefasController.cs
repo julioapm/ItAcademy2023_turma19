@@ -35,4 +35,18 @@ public class TarefasController : ControllerBase
         }
         return TarefaRespostaDto.ParaDto(tarefa);
     }
+
+    //POST .../api/v1/tarefas
+    [HttpPost]
+    public async Task<ActionResult<TarefaRespostaDto>> PostNovaTarefa(TarefaRequisicaoDto dto)
+    {
+        var model = new Tarefa();
+        model.Nome = dto.Nome!;
+        model.Descricao = dto.Descricao;
+        model.Completa = false;
+        var novaTarefa = await _repository.AdicionarAsync(model);
+        return CreatedAtAction(nameof(GetPorId), new {id = novaTarefa.Id}, TarefaRespostaDto.ParaDto(novaTarefa));
+    }
+
+    
 }
