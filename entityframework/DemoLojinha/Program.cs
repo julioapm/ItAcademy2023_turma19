@@ -8,6 +8,7 @@ builder.Services.AddDbContext<LojinhaContext>(opcoes => {
     opcoes.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
     opcoes.EnableSensitiveDataLogging().LogTo(Console.WriteLine);
 });
+builder.Services.AddScoped<IProdutosRepository, ProdutosRepositoryEF>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
