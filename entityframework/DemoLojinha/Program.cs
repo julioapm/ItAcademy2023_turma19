@@ -10,6 +10,7 @@ builder.Services.AddDbContext<LojinhaContext>(opcoes => {
 });
 builder.Services.AddScoped<IProdutosRepository, ProdutosRepositoryEF>();
 builder.Services.AddScoped<IPedidosRepository, PedidosRepositoryEF>();
+builder.Services.AddScoped<IClientesRepository, ClientesRepositoryEF>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

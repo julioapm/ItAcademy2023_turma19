@@ -18,8 +18,15 @@ public class PedidosRepositoryEF : IPedidosRepository
         var pedido = await _context.Pedidos
                     .Where(p => p.Id == id)
                     .Include(p => p.Cliente)
-                    .Include(p => p.Itens)
+                    .Include(p => p.Produtos)
                     .FirstOrDefaultAsync();
+        return pedido;
+    }
+
+    public async Task<Pedido> AdicionarAsync(Pedido pedido)
+    {
+        await _context.Pedidos.AddAsync(pedido);
+        await _context.SaveChangesAsync();
         return pedido;
     }
 }

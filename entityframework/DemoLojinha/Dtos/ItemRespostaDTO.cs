@@ -17,7 +17,7 @@ public class ItemRespostaDTO
         dto.NomeProduto = model.Produto.Nome;
         dto.ValorUnitario = $"{model.Produto.PrecoUnitario/100M:C}";
         dto.Quantidade = model.Quantidade;
-        dto.SubTotal = $"{model.Quantidade * model.Produto.PrecoUnitario / 100M : C}";
+        dto.SubTotal = $"{model.Quantidade*model.Produto.PrecoUnitario/100M:C}";
         return dto;
     }
 }

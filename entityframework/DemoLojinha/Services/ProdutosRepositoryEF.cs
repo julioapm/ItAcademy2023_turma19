@@ -19,4 +19,8 @@ public class ProdutosRepositoryEF : IProdutosRepository
         return await _context.Produtos.OrderBy(p => p.Nome).ToListAsync();
     }
     
+    public async Task<Produto?> ConsultarPorIdAsync(int id)
+    {
+        return await _context.Produtos.FindAsync(id);
+    }
 }
