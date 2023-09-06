@@ -58,3 +58,20 @@ p4.peso = 45.68;
 console.log(p4.peso);
 p4.fazAniversario();
 console.log(p4.idade);
+
+let {nome, idade} = p4;
+console.log(nome);
+
+function saudar({nome}:Pessoa) {
+    console.log(`Alô, ${nome}!`);
+}
+
+saudar(p4);
+
+//gerar JSON
+const json = JSON.stringify(p1);
+console.log(json);
+//ler JSON
+const json2 = '{"nome":"Json da Silva", "idade":8}';
+const obj2: Pessoa = JSON.parse(json2);
+console.log(obj2);
