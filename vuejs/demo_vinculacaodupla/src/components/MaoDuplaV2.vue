@@ -7,7 +7,7 @@ const valorTexto = ref('');
 
 <template>
     <div>
-        <input type="text" placeholder="Digite seu nome" v-model="valorTexto" />
+        <input type="text" placeholder="Digite seu nome" v-model.trim="valorTexto" />
         <span>{{ valorTexto }}</span>
     </div>
 </template>
