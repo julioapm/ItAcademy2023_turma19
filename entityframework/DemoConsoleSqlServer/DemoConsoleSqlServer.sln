@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoConsoleSqlServer", "DemoConsoleSqlServer.csproj", "{340D5F22-BE42-420A-A7C2-730FEF9D4760}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{340D5F22-BE42-420A-A7C2-730FEF9D4760}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{340D5F22-BE42-420A-A7C2-730FEF9D4760}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{340D5F22-BE42-420A-A7C2-730FEF9D4760}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{340D5F22-BE42-420A-A7C2-730FEF9D4760}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {856A5773-4D40-4315-990C-2FE992326221}
+	EndGlobalSection
+EndGlobal
